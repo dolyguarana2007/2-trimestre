@@ -8,28 +8,46 @@ const perguntas = [
   {
     enunciado:"quantos anos vc tem ?";
     alternativa: [
-      "15 anos",
-        "16 anos",
+      {
+     texto: "15 anos",
+        afirmação: "afirmação",
+      }
+      {
+    texto: "16 anos";
+    afirmação: "afirmação"
+    },
       ]
 },
  {
     enunciado:"oq vc gosta de fazer ?";
     alternativa: [
-      "dormir",
-        "assistir serie",
+      {
+      texto: "dormir",
+      afirmação: "afirmação
+      }
+      {
+       texto: "assistir serie",
+         afirmação: "afirmação"
       ]
 },
  {
     enunciado:"vc tem algum animal de estimação?";
     alternativa: [
-      "sim",
-        "não",
+      {
+      texto: "sim",
+        afirmação: "afirmaçaão",
+        {
+      {
+      texto: "não",
+        afirmação:"afirmação"
+          },
       ]
 },
  {
     enunciado:"oq vc gosta de comer";
     alternativa: [
-      "estrogonoff",
+     texto: "estrogonoff",
+      afi
         "macarrão",
       ]
 },
@@ -40,7 +58,26 @@ const perguntas = [
         "não",
       ]
 },
+];
 
+let atual = 0;
+let perguntaAtual;
+
+function mostraPergunta() {
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    mostraAlternativas();
+}
+
+function mostraAlternativas() {
+    for (const alternativa of perguntaAtual.alternativas) {
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa;
+        caixaAlternativas.appendChild(botaoAlternativas);
+    }
+}
+
+mostraPergunta();
 
 
 
